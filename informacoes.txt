@@ -1,0 +1,10 @@
+O arquivo classifica.php é o algoritmo que desenvolvi para classificar os tickets. Usei expressões regulares para fazer isso. A cada palavra da expressão encontrada no texto do cliente eu adicionava 1 ponto na pontuação do ticket de acordo com a prioridade da palavra. A cada palavra encontrada no assunto, eu adicionava 2 pontos. A cada expressão encontrada (ex: gostaria de, não funciona, etc) eu adicionei 2 pontos também (tanto no texto quanto no assunto).
+Depois eu calculei a pontuação do seguinte modo: 50 + pontuação da prioridade alta - pontuação da prioridade normal. Coloquei o número 50 só para não ter uma pontuação negativa quando o ticket tivesse mais pontuação de prioridade normal. Assim, tickets com pontuação maior que 50, são de prioridade alta e os tickets com pontuação menor ou igual a 50 são de prioridade normal.
+Após isso, eu adicionei as informações da pontuação e da prioridade no array do arquivo json e em seguida salvei essas alterações no arquivo.
+
+O arquivo inicio.php é basicamente a tela que desenvolvi para o usuário conseguir visualizar os tickets.
+Em relação aos recursos, só consegui fazer com que cada recurso fosse executado separadamente dos outros. Por isso, coloquei na tela as opções de paginação/filtro/ordenação. Basta escolher uma delas e colocar no seu campo correspondente a informação. (Por exemplo: se escolher filtrar por intervalo de data, escolher essa opção e escrever o intervalo de data; se escolher filtrar por prioridade, basta selecionar a opção e escolher a prioridade; se escolher paginação, selecionar a opção e digitar no campo a quantidade de tickets por página; no caso da ordenação não precisa informar nada).
+
+O arquivo Ticket.php foi a API que desenvolvi, ela possui os métodos que usei no arquivo inicio.php.
+
+Para executar, basta colocar esses três arquivos na mesma pasta junto com o arquivo tickets.json.
